@@ -5,6 +5,8 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var informationTextStyle = const TextStyle(fontFamily: 'Oxygen');
+
     return Scaffold(
       body: SafeArea(
         child: SingleChildScrollView(
@@ -19,34 +21,43 @@ class DetailScreen extends StatelessWidget {
                   textAlign: TextAlign.center,
                   style: TextStyle(
                     fontSize: 30.0,
-                    fontWeight: FontWeight.bold,
+                    fontFamily: 'Staatliches',
                   ),
                 ),
               ),
               Container(
                 margin: const EdgeInsets.symmetric(vertical: 16.0),
-                child: const Row(
+                child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: <Widget>[
                     Column(
                       children: <Widget>[
-                        Icon(Icons.calendar_today),
-                        SizedBox(height: 8.0),
-                        Text('Open Everyday'),
+                        const Icon(Icons.calendar_today),
+                        const SizedBox(height: 8.0),
+                        Text(
+                          'Open Everyday',
+                          style: informationTextStyle,
+                        ),
                       ],
                     ),
                     Column(
                       children: <Widget>[
-                        Icon(Icons.access_time),
-                        SizedBox(height: 8.0),
-                        Text('09:00 - 20:00'),
+                        const Icon(Icons.access_time),
+                        const SizedBox(height: 8.0),
+                        Text(
+                          '09:00 - 20:00',
+                          style: informationTextStyle,
+                        ),
                       ],
                     ),
                     Column(
                       children: <Widget>[
-                        Icon(Icons.monetization_on),
-                        SizedBox(height: 8.0),
-                        Text('Rp 25.000'),
+                        const Icon(Icons.monetization_on),
+                        const SizedBox(height: 8.0),
+                        Text(
+                          'Rp 25.000',
+                          style: informationTextStyle,
+                        ),
                       ],
                     ),
                   ],
@@ -55,10 +66,9 @@ class DetailScreen extends StatelessWidget {
               Container(
                 padding: const EdgeInsets.all(16.0),
                 child: const Text(
-                  'Berada di jalur utama Bandung-Lembang, Farm House menjadi objek wisata yang tidak pernah sepi pengunjung. Selain karena letaknya strategis, kawasan ini juga menghadirkan nuansa wisata khas Eropa. Semua itu diterapkan dalam bentuk spot swafoto Instagramable.',
-                  textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 16.0),
-                ),
+                    'Berada di jalur utama Bandung-Lembang, Farm House menjadi objek wisata yang tidak pernah sepi pengunjung. Selain karena letaknya strategis, kawasan ini juga menghadirkan nuansa wisata khas Eropa. Semua itu diterapkan dalam bentuk spot swafoto Instagramable.',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(fontSize: 16.0)),
               ),
               SizedBox(
                 height: 150,
