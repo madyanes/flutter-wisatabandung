@@ -63,6 +63,7 @@ class DetailScreen extends StatelessWidget {
               SizedBox(
                 height: 150,
                 child: ListView(
+                  scrollDirection: Axis.horizontal,
                   children: [
                     Image.network(
                         'https://media-cdn.tripadvisor.com/media/photo-s/0d/7c/59/70/farmhouse-lembang.jpg'),
