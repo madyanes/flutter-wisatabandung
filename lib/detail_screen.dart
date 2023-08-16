@@ -8,6 +8,55 @@ class DetailScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return LayoutBuilder(
+      builder: (BuildContext context, BoxConstraints constraints) {
+        if (constraints.maxWidth > 800) {
+          return DetailWebPage(place: place);
+        } else {
+          return DetailMobilePage(place: place);
+        }
+      },
+    );
+  }
+}
+
+class DetailWebPage extends StatelessWidget {
+  final TourismPlace place;
+
+  const DetailWebPage({Key? key, required this.place}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return const Scaffold(
+      body: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            'Wisata Bandung',
+            style: TextStyle(
+              fontFamily: 'Staatliches',
+              fontSize: 32,
+            ),
+          ),
+          SizedBox(
+            height: 32,
+          ),
+          Row(
+            children: [],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class DetailMobilePage extends StatelessWidget {
+  final TourismPlace place;
+
+  const DetailMobilePage({Key? key, required this.place}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
     var informationTextStyle = const TextStyle(fontFamily: 'Oxygen');
 
     return Scaffold(
