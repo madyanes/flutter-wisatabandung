@@ -12,7 +12,30 @@ class MainScreen extends StatelessWidget {
         title:
             Text('Wisata Bandung. Size: ${MediaQuery.of(context).size.width}'),
       ),
-      body: const TourismPlaceList(),
+      body: LayoutBuilder(
+        builder: (BuildContext context, BoxConstraints constraints) {
+          if (constraints.maxWidth <= 600) {
+            return const TourismPlaceList();
+          } else {
+            return const TourismPlaceGrid();
+          }
+        },
+      ),
+    );
+  }
+}
+
+class TourismPlaceGrid extends StatelessWidget {
+  const TourismPlaceGrid({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(24.0),
+      child: GridView.count(
+        crossAxisCount: 4,
+        children: [],
+      ),
     );
   }
 }
