@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:wisata_bandung/detail_screen.dart';
 
 class MainScreen extends StatelessWidget {
   const MainScreen({Key? key}) : super(key: key);
@@ -9,34 +10,41 @@ class MainScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Wisata Bandung'),
       ),
-      body: Card(
-        child: Row(
-          children: <Widget>[
-            Expanded(
-              flex: 1,
-              child: Image.asset('images/farm-house.jpg'),
-            ),
-            const Expanded(
-              flex: 2,
-              child: Padding(
-                padding: EdgeInsets.all(8.0),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisSize: MainAxisSize.min,
-                  children: <Widget>[
-                    Text(
-                      'Farm House Lembang',
-                      style: TextStyle(fontSize: 16.0),
-                    ),
-                    SizedBox(
-                      height: 10,
-                    ),
-                    Text('Lembang'),
-                  ],
+      body: InkWell(
+        onTap: () {
+          Navigator.push(context, MaterialPageRoute(builder: (context) {
+            return const DetailScreen();
+          }));
+        },
+        child: Card(
+          child: Row(
+            children: <Widget>[
+              Expanded(
+                flex: 1,
+                child: Image.asset('images/farm-house.jpg'),
+              ),
+              const Expanded(
+                flex: 2,
+                child: Padding(
+                  padding: EdgeInsets.all(8.0),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisSize: MainAxisSize.min,
+                    children: <Widget>[
+                      Text(
+                        'Farm House Lembang',
+                        style: TextStyle(fontSize: 16.0),
+                      ),
+                      SizedBox(
+                        height: 10,
+                      ),
+                      Text('Lembang'),
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
     );
