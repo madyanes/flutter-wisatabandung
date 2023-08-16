@@ -27,22 +27,100 @@ class DetailWebPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    var informationTextStyle = const TextStyle(fontFamily: 'Oxygen');
+
+    return Scaffold(
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Text(
+          const Text(
             'Wisata Bandung',
             style: TextStyle(
               fontFamily: 'Staatliches',
               fontSize: 32,
             ),
           ),
-          SizedBox(
-            height: 32,
-          ),
+          const SizedBox(height: 32),
           Row(
-            children: [],
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              const Expanded(
+                child: Column(
+                  children: [],
+                ),
+              ),
+              const SizedBox(width: 32),
+              Expanded(
+                child: Card(
+                  child: Container(
+                    padding: const EdgeInsets.all(16),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: <Widget>[
+                        Container(
+                          child: Text(
+                            place.name,
+                            textAlign: TextAlign.center,
+                            style: const TextStyle(
+                              fontSize: 30.0,
+                              fontFamily: 'Staatliches',
+                            ),
+                          ),
+                        ),
+                        Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Row(
+                              children: <Widget>[
+                                const Icon(Icons.calendar_today),
+                                const SizedBox(width: 8.0),
+                                Text(
+                                  place.openDays,
+                                  style: informationTextStyle,
+                                ),
+                              ],
+                            ),
+                            const FavoriteButton(),
+                          ],
+                        ),
+                        Row(
+                          children: <Widget>[
+                            const Icon(Icons.access_time),
+                            const SizedBox(width: 8.0),
+                            Text(
+                              place.openTime,
+                              style: informationTextStyle,
+                            ),
+                          ],
+                        ),
+                        const SizedBox(height: 8.0),
+                        Row(
+                          children: <Widget>[
+                            const Icon(Icons.monetization_on),
+                            const SizedBox(width: 8.0),
+                            Text(
+                              place.ticketPrice,
+                              style: informationTextStyle,
+                            ),
+                          ],
+                        ),
+                        Container(
+                          padding: const EdgeInsets.symmetric(vertical: 16.0),
+                          child: Text(
+                            place.description,
+                            textAlign: TextAlign.justify,
+                            style: const TextStyle(
+                              fontSize: 16.0,
+                              fontFamily: 'Oxygen',
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
