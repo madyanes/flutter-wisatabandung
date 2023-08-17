@@ -65,17 +65,24 @@ class DetailWebPage extends StatelessWidget {
                               Container(
                                 height: 150,
                                 padding: const EdgeInsets.only(bottom: 16),
-                                child: ListView(
-                                  scrollDirection: Axis.horizontal,
-                                  children: place.imageUrls.map((url) {
-                                    return Padding(
-                                      padding: const EdgeInsets.all(4.0),
-                                      child: ClipRRect(
-                                        borderRadius: BorderRadius.circular(10),
-                                        child: Image.network(url),
-                                      ),
-                                    );
-                                  }).toList(),
+                                child: Scrollbar(
+                                  child: Container(
+                                    height: 150,
+                                    padding: const EdgeInsets.only(bottom: 16),
+                                    child: ListView(
+                                      scrollDirection: Axis.horizontal,
+                                      children: place.imageUrls.map((url) {
+                                        return Padding(
+                                          padding: const EdgeInsets.all(4.0),
+                                          child: ClipRRect(
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            child: Image.network(url),
+                                          ),
+                                        );
+                                      }).toList(),
+                                    ),
+                                  ),
                                 ),
                               ),
                             ],
