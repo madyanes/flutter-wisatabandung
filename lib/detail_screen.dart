@@ -57,14 +57,12 @@ class DetailWebPage extends StatelessWidget {
                     child: Column(
                       mainAxisSize: MainAxisSize.max,
                       children: <Widget>[
-                        Container(
-                          child: Text(
-                            place.name,
-                            textAlign: TextAlign.center,
-                            style: const TextStyle(
-                              fontSize: 30.0,
-                              fontFamily: 'Staatliches',
-                            ),
+                        Text(
+                          place.name,
+                          textAlign: TextAlign.center,
+                          style: const TextStyle(
+                            fontSize: 30.0,
+                            fontFamily: 'Staatliches',
                           ),
                         ),
                         Row(
