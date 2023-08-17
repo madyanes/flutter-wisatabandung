@@ -44,9 +44,35 @@ class DetailWebPage extends StatelessWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Expanded(
+              Expanded(
                 child: Column(
-                  children: [],
+                  children: [
+                    Column(
+                      children: [
+                        ClipRRect(
+                          borderRadius: BorderRadius.circular(10),
+                          child: Image.asset(place.imageAsset),
+                        ),
+                        const SizedBox(height: 16),
+                        Container(
+                          height: 150,
+                          padding: const EdgeInsets.only(bottom: 16),
+                          child: ListView(
+                            scrollDirection: Axis.horizontal,
+                            children: place.imageUrls.map((url) {
+                              return Padding(
+                                padding: const EdgeInsets.all(4.0),
+                                child: ClipRRect(
+                                  borderRadius: BorderRadius.circular(10),
+                                  child: Image.network(url),
+                                ),
+                              );
+                            }).toList(),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ],
                 ),
               ),
               const SizedBox(width: 32),
